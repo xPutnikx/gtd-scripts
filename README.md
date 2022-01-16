@@ -4,7 +4,13 @@ Scripts for getting things done.
 The translate-json node script is simple. It takes an input .json file, a comma separated list of language codes supported by [Google Translate](https://ctrlq.org/code/19899-google-translate-languages), and an optional api key.
 
 ## Usage with an API Key
-node translate-json fixtures/translate-json/en.json fr,et,nl YOUR_GOOGLE_API_KEY
+node translate-json translate -i fixtures/translate-json/en.json -o output -l fr,et,nl -k YOUR_GOOGLE_API_KEY
+
+### Params
+- -i; --input specify intput file 
+- -o; --output specify output directory; If it doesn't exist it will be created automatically
+- -l; --languages specify a comma-separated list of language codes to which file will be translated
+- -k; -apiKey specify Google API Key
 
 ## Usage without an API Key
 node translate-json fixtures/translate-json/en.json fr,et,nl
@@ -13,4 +19,4 @@ This free version will let you batch-translate a file until you start beeing rej
 
 
 ### Future Improvements:
-* Specifying output file name and location.
+* Specifying output file names.
