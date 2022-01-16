@@ -103,8 +103,12 @@ function iterLeaves(value, keyChain, accumulator, languageKey) {
                     prom = translate(value, { to: languageKey })
                 }
 
-                return prom.then((res) => cachedIndex(value, res, languageKey))
-                    .catch((err) => console.log(err))
+                return prom
+                    .then((res) => cachedIndex(value, res, languageKey))
+                    .catch((err) => {
+                        cachedIndex(value, 'TRANSLATION_ERROR', languageKey);
+                        console.log(err);
+                    })
                     .then((text) => {
                         //Sets the value in the accumulator
                         _.set(accumulator, keyChain, text);
