@@ -25,6 +25,7 @@
     "prompt": "^1.0.0",
     "superagent": "^3.4.1",
     "superagent-promise": "^1.1.0",
-    "trello": "^0.7.0"
+    "trello": "^0.3.0",
+    "yargs": "^17.3.1"
   }
 }
